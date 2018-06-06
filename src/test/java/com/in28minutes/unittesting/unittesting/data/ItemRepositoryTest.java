@@ -3,7 +3,6 @@ package com.in28minutes.unittesting.unittesting.data;
 import static org.junit.Assert.assertEquals;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
