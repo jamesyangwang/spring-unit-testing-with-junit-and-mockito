@@ -1,5 +1,6 @@
 package com.in28minutes.unittesting.unittesting.controller;
 
+import static org.junit.Assert.assertEquals;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -29,13 +30,13 @@ public class HelloWorldControllerTest {
 				.get("/hello-world")
 				.accept(MediaType.APPLICATION_JSON);
 		
-		MvcResult result = mockMvc.perform(request)
+		MvcResult result = 
+				mockMvc.perform(request)
 				.andExpect(status().isOk())
 				.andExpect(content().string("Hello World"))
 				.andReturn();
 	
 		//verify "Hello World"
-		//assertEquals("Hello World", result.getResponse().getContentAsString());
+		assertEquals("Hello World", result.getResponse().getContentAsString());
 	}
-
 }

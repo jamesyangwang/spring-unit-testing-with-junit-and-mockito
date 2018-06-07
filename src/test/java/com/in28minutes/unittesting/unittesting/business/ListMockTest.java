@@ -21,6 +21,7 @@ import org.mockito.ArgumentCaptor;
 
 public class ListMockTest {
 
+	@SuppressWarnings("unchecked")
 	List<String> mock = mock(List.class);
 
 	@Test
@@ -55,8 +56,8 @@ public class ListMockTest {
 	@Test
 	public void verificationBasics() {
 		// SUT
-		String value1 = mock.get(0);
-		String value2 = mock.get(1);
+		mock.get(0);
+		mock.get(1);
 
 		// Verify
 		verify(mock).get(0);
@@ -102,7 +103,8 @@ public class ListMockTest {
 
 	@Test
 	public void mocking() {
-		ArrayList arrayListMock = mock(ArrayList.class);
+		@SuppressWarnings("unchecked")
+		ArrayList<String> arrayListMock = mock(ArrayList.class);
 		System.out.println(arrayListMock.get(0));//null
 		System.out.println(arrayListMock.size());//0
 		arrayListMock.add("Test");
@@ -114,7 +116,8 @@ public class ListMockTest {
 
 	@Test
 	public void spying() {
-		ArrayList arrayListSpy = spy(ArrayList.class);
+		@SuppressWarnings("unchecked")
+		ArrayList<String> arrayListSpy = spy(ArrayList.class);
 		arrayListSpy.add("Test0");
 		System.out.println(arrayListSpy.get(0));//Test0
 		System.out.println(arrayListSpy.size());//1

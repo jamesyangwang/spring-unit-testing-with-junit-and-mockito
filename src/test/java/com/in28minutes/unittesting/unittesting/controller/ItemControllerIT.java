@@ -16,7 +16,7 @@ public class ItemControllerIT {
 	
 	@Autowired
 	private TestRestTemplate restTemplate;
-		
+
 	@Test
 	public void contextLoads() throws JSONException {	
 		
